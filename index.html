@@ -59,6 +59,20 @@
 				<a class="btn btn-primary btn-lg" href="#" role="button">読解</a></p>
 			</div>
 		</div>
+		<div class="container">
+			<a href="javascript:void(0)" class="popupover" data-toggle="popover" data-trigger="click" title="Popover" data-content="something here">123123123</a>
+		</div>
+		<script>
+			$('.popupover').popover();
+			jQuery("body").on("click touchstart", '.popupover', function() {
+			$(this).popover("show");
+			    $('.popupover').not(this).popover("hide"); // hide other popovers
+			    return false;
+			});
+			jQuery("body").on("click touchstart", function() {
+			    $('.popupover').popover("hide"); // hide all popovers when clicked on body
+			});
+		</script>
 		<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
 		<script src="bootstrap.js"></script>
 		<script>
